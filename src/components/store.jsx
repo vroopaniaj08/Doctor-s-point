@@ -3,7 +3,7 @@ import loginslice from './loginslice'
 
 const store = configureStore({
     reducer:{
-        Lslice:loginslice
+        userDetail:loginslice
     }
 })
 

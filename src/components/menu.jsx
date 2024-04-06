@@ -35,6 +35,8 @@ function Menu() {
               <li><Link className="nav-link scrollto" to="/departments">Departments</Link></li>
               <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
               <li><Link className="nav-link scrollto" to="/login">Login</Link></li>
+              <li><Link className="nav-link scrollto" to="/reception">Reception</Link></li>
+              <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
 
               <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li>
             </ul>
