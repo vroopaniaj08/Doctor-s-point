@@ -2,13 +2,18 @@ import { createRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import webMethods from '../service/webMethods';
 import apis from '../service/apis';
-
+import { useDispatch } from 'react-redux'
+import { loginInfo } from './loginslice';
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
   let emailBox = createRef();
   let passwordBox = createRef();
   const [msg,setmsg] = useState("");
   const [type,settype] = useState("");
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+
   let isLogin= async(event)=>{
     event.preventDefault();
     let ob = {
@@ -19,6 +24,10 @@ function Login() {
     console.log(response);
     {setmsg(response.data.msg)}
     {settype("("+response.data.data.userType+")")}
+    if(response.data.status){
+      dispatch(loginInfo({isL:true,name:response.data.data.user.name,userType:response.data.data.userType,token:response.data.data.token}))
+      navigate('/')
+    }
     event.target.reset();
   }
   
