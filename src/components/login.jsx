@@ -8,7 +8,7 @@ function Login() {
   let emailBox = createRef();
   let passwordBox = createRef();
   const [msg,setmsg] = useState("");
-  
+  const [type,settype] = useState("");
   let isLogin= async(event)=>{
     event.preventDefault();
     let ob = {
@@ -18,6 +18,7 @@ function Login() {
     const response = await webMethods.postapi(apis.LOGINAPI,ob)
     console.log(response);
     {setmsg(response.data.msg)}
+    {settype("("+response.data.data.userType+")")}
     event.target.reset();
   }
   
@@ -38,7 +39,7 @@ function Login() {
           <div className="row mt-3">
             <div className="col-md-12">
               <button className="btn btn-primary w-50">Login</button> &nbsp;&nbsp;&nbsp;
-              {msg}
+              {msg}&nbsp;{type}
               <Link to='/register' className="text-center w-50 d-block">Sign Up or Register</Link>
             </div>
           </div>
