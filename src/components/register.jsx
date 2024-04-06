@@ -3,12 +3,15 @@ import { createRef } from "react"
 import webMethods from "../service/webMethods";
 import url from '../service/apis'
 import { useState } from "react";
+
 function Register() {
   let nameBox = createRef();
   let phoneBox = createRef();
   let emailBox = createRef();
   let passwordBox = createRef();
+  
   const [msg,setmsg] = useState("")
+
   let isRegister = async(event)=>{
     event.preventDefault()
     let ob={                   
