@@ -2,8 +2,6 @@
 
 
 function Home() {
-
-
   return (
     <>
     <section id="hero" className="d-flex align-items-center">

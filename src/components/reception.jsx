@@ -14,11 +14,11 @@ export default function Reception(){
     let saveReception = async(event) =>{
         event.preventDefault();
         let ob = {
-            name:nameBox.current.value,
-            phoneNumber:phoneBox.current.value,
-            email:emailBox.current.value,
-            password:passwordBox.current.value,
-            raddress:raddressBox.current.value
+            "name":nameBox.current.value,
+            "phoneNumber":phoneBox.current.value,
+            "email":emailBox.current.value,
+            "password":passwordBox.current.value,
+            "raddress":raddressBox.current.value
         }
         const response = await webMethods.postapiwitht(apis.REGISTERAPI,ob,doctor.token)
         console.log(response)

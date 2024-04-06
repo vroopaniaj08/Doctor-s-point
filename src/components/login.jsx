@@ -25,7 +25,7 @@ function Login() {
     {setmsg(response.data.msg)}
     {settype("("+response.data.data.userType+")")}
     if(response.data.status){
-      dispatch(loginInfo({isL:true,name:response.data.data.user.name,userType:response.data.data.userType,token:response.data.data.token}))
+      dispatch(loginInfo({id:response.data.data.user.id,isL:true,name:response.data.data.user.name,userType:response.data.data.userType,token:response.data.data.token}))
       navigate('/')
     }
     event.target.reset();
