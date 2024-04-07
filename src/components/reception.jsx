@@ -22,6 +22,16 @@ export default function Reception(){
         }
         const response = await webMethods.postapiwitht(apis.REGISTERAPI,ob,doctor.token)
         console.log(response)
+        let obj = {
+          id:response.data.data.id,
+          name:response.data.data.name,
+          email:response.data.data.email,
+          phone:response.data.data.phoneNumber
+        }
+        let obj1 = localStorage.getItem('reception');
+        let obj3 = JSON.parse(obj1)
+        let obj2 = [...obj3,obj];
+        localStorage.setItem('reception',JSON.stringify(obj2));
     }
 
     return<>

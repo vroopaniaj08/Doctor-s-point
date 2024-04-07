@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-
+import { useSelector } from 'react-redux'
 
 function Menu() {
-
+  let doctorlogin = useSelector(state=>state.userDetail.value)
 
   return (
     <>
@@ -28,18 +28,22 @@ function Menu() {
           <h1 className="logo me-auto"><a href="index.html">Doctor's point</a></h1>
 
           <nav id="navbar" className="navbar order-last order-lg-0">
+            {doctorlogin.isL?<ul>
+              <li><Link className="nav-link scrollto" to="/reception">Reception</Link></li>
+              <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
+              <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
+              <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li>
+              <li><Link className="nav-link scrollto" to="/logout">Logout</Link></li>
+              </ul>
+            :
             <ul>
               <li><Link className="nav-link scrollto active" to="/">Home</Link></li>
               <li><Link className="nav-link scrollto" to="/about">About</Link></li>
               <li><Link className="nav-link scrollto" to="/services">Services</Link></li>
               <li><Link className="nav-link scrollto" to="/departments">Departments</Link></li>
-              <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
               <li><Link className="nav-link scrollto" to="/login">Login</Link></li>
-              <li><Link className="nav-link scrollto" to="/reception">Reception</Link></li>
-              <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
-
-              <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li>
             </ul>
+            }
             <i className="bi bi-list mobile-nav-toggle"></i>
           </nav>
 

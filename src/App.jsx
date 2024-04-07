@@ -8,9 +8,15 @@ import Register from './components/register'
 import {Routes,Route} from "react-router-dom"
 import Reception from './components/reception'
 import Receptionlist from './components/Receptionlist'
+import Logout from './components/logout'
+// import { useNavigate } from 'react-router-dom'
+// import { useEffect } from 'react'
 function App() {
-
-
+  localStorage.setItem('reception','[]')
+  // let navigate = useNavigate();
+  // useEffect( () => {
+  //   navigate('/');
+  // })
   return (
     <>
     <Menu></Menu>
@@ -21,6 +27,7 @@ function App() {
     <Route exact path='/doctors' element={<Doctor></Doctor>}></Route>
     <Route exact path='/reception' element={<Reception></Reception>}></Route>
     <Route exact path='/receptionlist' element={<Receptionlist></Receptionlist>}></Route>
+    <Route exact path='/logout' element={<Logout></Logout>}></Route>
    </Routes>
     </>
   )
