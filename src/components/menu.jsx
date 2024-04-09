@@ -10,7 +10,9 @@ function Menu() {
   let dispatch = useDispatch()
   let navigate = useNavigate()
   let doctorLoginStatus = useSelector(state=>state.userDetail.value)
+
   let result = JSON.parse(localStorage.getItem('LoginStatus'))
+  
   let logout=(event)=>{
     event.preventDefault();
     dispatch(loginInfo({id:undefined,isL:false,name:undefined,userType:undefined,token:undefined}))
@@ -45,6 +47,7 @@ function Menu() {
               <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
               <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
               <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li>
+              <li><Link className="nav-link scrollto" to="/newpatient">Add patient</Link></li>
               <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
               </ul>
             :

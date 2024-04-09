@@ -9,7 +9,7 @@ function loginStatus(){
         console.log(result)
         obj = result
     }
-    console.log(obj)
+    // console.log(obj)
     return obj;
 }
 const slice = createSlice({
