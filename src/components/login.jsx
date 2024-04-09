@@ -21,19 +21,22 @@ function Login() {
       "password":passwordBox.current.value
     }
     const response = await webMethods.postapi(apis.LOGINAPI,ob)
-    console.log(response);
+    // console.log(response);
     {setmsg(response.data.msg)}
     {settype("("+response.data.data.userType+")")}
+
     if(response.data.status){
       dispatch(loginInfo({id:response.data.data.user.id,isL:true,name:response.data.data.user.name,userType:response.data.data.userType,token:response.data.data.token}))
       navigate('/')
     }
+
     event.target.reset();
   }
   
   return (
     <>
       <div className="container p-4 w-50" style={{ marginTop: "250px", boxShadow: '1px 2px 4px 2px rgba(0, 0, 0, 0.3)', borderRadius: "5px" }}>
+        <h3 className='text-center'>Login page</h3>
         <form onSubmit={isLogin}>
           <div className="row mt-3">
             <div className="col-md-12">
@@ -47,9 +50,9 @@ function Login() {
           </div>
           <div className="row mt-3">
             <div className="col-md-12">
-              <button className="btn btn-primary w-50">Login</button> &nbsp;&nbsp;&nbsp;
+              <button className="btn btn-primary w-100">Login</button> &nbsp;&nbsp;&nbsp;
               {msg}&nbsp;{type}
-              <Link to='/register' className="text-center w-50 d-block">Sign Up or Register</Link>
+              <Link to='/register' className="text-center w-100 d-block">Sign Up or Register</Link>
             </div>
           </div>
         </form>

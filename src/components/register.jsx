@@ -29,6 +29,7 @@ function Register() {
   return (
     <>
       <div className="container p-4 w-50" style={{ marginTop: "250px", boxShadow: '1px 2px 4px 2px rgba(0, 0, 0, 0.3)', borderRadius: "5px" }}>
+      <h3 className='text-center'>Sign Up</h3>
         <form onSubmit={isRegister}>
           <div className="row mt-3">
             <div className="col-md-12">

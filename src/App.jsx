@@ -12,7 +12,7 @@ import Logout from './components/logout'
 // import { useNavigate } from 'react-router-dom'
 // import { useEffect } from 'react'
 function App() {
-  localStorage.setItem('reception','[]')
+  // localStorage.setItem('reception','[]')
   // let navigate = useNavigate();
   // useEffect( () => {
   //   navigate('/');
@@ -27,7 +27,7 @@ function App() {
     <Route exact path='/doctors' element={<Doctor></Doctor>}></Route>
     <Route exact path='/reception' element={<Reception></Reception>}></Route>
     <Route exact path='/receptionlist' element={<Receptionlist></Receptionlist>}></Route>
-    <Route exact path='/logout' element={<Logout></Logout>}></Route>
+    {/* <Route path='/logout' element={<Logout></Logout>}></Route> */}
    </Routes>
     </>
   )

@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom"
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { loginInfo } from "./loginslice"
+// import { useSelector } from 'react-redux'
 
 function Menu() {
-  let doctorlogin = useSelector(state=>state.userDetail.value)
-
+  // let doctorlogin = useSelector(state=>state.userDetail.value)
+  let dispatch = useDispatch()
+  let navigate = useNavigate()
+  let doctorLoginStatus = useSelector(state=>state.userDetail.value)
+  let result = JSON.parse(localStorage.getItem('LoginStatus'))
+  let logout=(event)=>{
+    event.preventDefault();
+    dispatch(loginInfo({id:undefined,isL:false,name:undefined,userType:undefined,token:undefined}))
+        navigate('/');
+}
   return (
     <>
       <div id="topbar" className="d-flex align-items-center fixed-top">
@@ -28,12 +40,12 @@ function Menu() {
           <h1 className="logo me-auto"><a href="index.html">Doctor's point</a></h1>
 
           <nav id="navbar" className="navbar order-last order-lg-0">
-            {doctorlogin.isL?<ul>
+            {doctorLoginStatus.isL?<ul>
               <li><Link className="nav-link scrollto" to="/reception">Reception</Link></li>
               <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
               <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
               <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li>
-              <li><Link className="nav-link scrollto" to="/logout">Logout</Link></li>
+              <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
               </ul>
             :
             <ul>

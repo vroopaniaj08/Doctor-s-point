@@ -7,4 +7,12 @@ const store = configureStore({
     }
 })
 
+store.subscribe(()=>{
+    let str = store.getState().userDetail.value
+    console.log("from store", str)
+
+    localStorage.setItem("LoginStatus",JSON.stringify(str))
+    // let result = JSON.parse(localStorage.getItem('LoginStatus'))
+
+})
 export default store
