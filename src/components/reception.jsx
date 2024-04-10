@@ -23,7 +23,7 @@ export default function Reception(){
             "password":passwordBox.current.value,
             "raddress":raddressBox.current.value
         }
-        const response = await webMethods.postapiwitht(apis.REGISTERAPI,ob,doctor.token)
+        const response = await webMethods.postapiwitht(apis.RECEPTIONAPI,ob,doctor.token)
         console.log(response)
         {setmsg(response.data.msg)}
 

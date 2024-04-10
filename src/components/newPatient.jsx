@@ -12,6 +12,7 @@ function NewPatient() {
   let phoneBox = createRef();
   let appointmentBox = createRef();
   let timeBox = createRef();
+  let diagnosisBox = createRef();
   
   let result = useSelector(state=>state.userDetail.value)
   const [msg,setmsg] = useState("")
@@ -20,16 +21,17 @@ function NewPatient() {
     event.preventDefault()
     let ob={                   
       "name": nameBox.current.value,
-      "sex": sexBox.current.value,
+      "gender": sexBox.current.value,
       "age": ageBox.current.value,
       "phoneNumber": phoneBox.current.value,
       "appointmentdate": appointmentBox.current.value,
-      "time": timeBox.current.value
+      "time": timeBox.current.value,
+      "diagnosis":diagnosisBox.current.value
       }
       const response = await webMethods.postapiwitht(url.NEWPATIENTAPI,ob,result.token);
       console.log(response);
       {setmsg(response.data.msg)}
-      event.target.reset();
+      // event.target.reset();
   }
 
   return (
@@ -67,7 +69,12 @@ function NewPatient() {
           </div>
           <div className="row mt-3">
             <div className="col-md-12">
-              <button type = "submit" className="btn btn-primary w-50">Add Patient</button> &nbsp;&nbsp;&nbsp;
+              <input type="text" ref={diagnosisBox} className="form-control" placeholder="Enter diagnosis here"></input>
+            </div>
+          </div>
+          <div className="row mt-3">
+            <div className="col-md-12">
+              <button type = "submit" className="btn btn-primary w-100">Add Patient</button> &nbsp;&nbsp;&nbsp;
               {msg}
             </div>
           </div>

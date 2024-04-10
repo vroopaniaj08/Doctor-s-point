@@ -20,5 +20,17 @@ class WebMethods{
               'Content-Type': 'application/json',
             },
           })}
+
+    putapi(url,data){
+      return axios.put(url,data)
+    }
+    putapiwitht(url,data,token){
+      return axios.post(url, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      })
+    }
 }
 export default new WebMethods()

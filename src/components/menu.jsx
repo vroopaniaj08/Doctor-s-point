@@ -42,14 +42,22 @@ function Menu() {
           <h1 className="logo me-auto"><a href="index.html">Doctor's point</a></h1>
 
           <nav id="navbar" className="navbar order-last order-lg-0">
-            {doctorLoginStatus.isL?<ul>
+            {doctorLoginStatus.isL?
+            doctorLoginStatus.userType == 'doctor'?
+
+              <ul>
               <li><Link className="nav-link scrollto" to="/reception">Reception</Link></li>
               <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
               <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
-              <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li>
+              <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
+              </ul>
+              :
+              <ul>
+              {/* <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li> */}
               <li><Link className="nav-link scrollto" to="/newpatient">Add patient</Link></li>
               <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
               </ul>
+            
             :
             <ul>
               <li><Link className="nav-link scrollto active" to="/">Home</Link></li>
