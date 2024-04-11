@@ -11,7 +11,7 @@ export default function Receptionlist() {
     const [getreception, setreception] = useState([])
 
     useEffect(() => {
-        // rece()
+        rece()
     },[])
 
     let rece = async () => {
@@ -33,28 +33,32 @@ export default function Receptionlist() {
     //     var receptionlist = JSON.parse(storedData);
     // }
         return <>
-            {/* {getreception.length? */}
-            <button onClick={rece} style={{marginTop:"150px"}}>click here</button>
-            <table className="table container-fluid" style={{marginTop:"150px"}}>
-                <tr><th>ID</th>
-                <th>NAME</th>
-                <th>EMAIL</th>
-                <th>PHONE NUMBER</th></tr>
+            <h3 className="text-center" style={{marginTop:"150px"}}>Reception List</h3>
+            {getreception.length?
+            <table className="table table-striped table-bordered table-hover table-responsive-md container">
+                <thead>
+                    <tr><th>ID</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>PHONE NUMBER</th></tr>
+                </thead>
+                <tbody>
                     {getreception.map((obj)=><tr>
                         <td>{obj.id}</td>
                         <td>{obj.name}</td>
                         <td>{obj.email}</td>
-                        <td>{obj.phone}</td>
+                        <td>{obj.phoneNumber}</td>
                         {/* <td><button className = "btn btn-primary" onClick={()=>deleteObj(obj.id)}>Delete</button></td> */}
                     </tr>)}
+                </tbody>
                     </table>
-                    {/* : */}
-                    {/* <div className="d-flex justify-content-center align-items-center" style={{height:"100vh"}}>
+                    : 
+                     <div className="d-flex justify-content-center align-items-center" style={{height:"100vh"}}>
                         <div className="text-center"><h1>Kindly add the reception</h1></div>
                         <div>
                         <Link className = "text-center" to="/reception"><button className="btn btn-primary">Add Reception</button></Link>
                         </div>
                     </div>
-                } */}
+                } 
                 </>
     }

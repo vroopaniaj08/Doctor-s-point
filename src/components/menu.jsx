@@ -49,6 +49,7 @@ function Menu() {
               <li><Link className="nav-link scrollto" to="/reception">Reception</Link></li>
               <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
               <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
+              <li><Link className="nav-link scrollto" to="/patientList">Patient List</Link></li>
               <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
               </ul>
               :
@@ -60,7 +61,7 @@ function Menu() {
             
             :
             <ul>
-              <li><Link className="nav-link scrollto active" to="/">Home</Link></li>
+              <li><Link className="nav-link scrollto" to="/">Home</Link></li>
               <li><Link className="nav-link scrollto" to="/about">About</Link></li>
               <li><Link className="nav-link scrollto" to="/services">Services</Link></li>
               <li><Link className="nav-link scrollto" to="/departments">Departments</Link></li>

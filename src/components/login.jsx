@@ -27,7 +27,7 @@ function Login() {
 
     if(response.data.status){
       dispatch(loginInfo({id:response.data.data.user.id,isL:true,name:response.data.data.user.name,userType:response.data.data.userType,token:response.data.data.token}))
-      navigate('/')
+      navigate('/doctor')
     }
 
     event.target.reset();
