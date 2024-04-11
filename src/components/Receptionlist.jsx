@@ -55,7 +55,7 @@ export default function Receptionlist() {
                     : 
                      <div className="d-flex justify-content-center align-items-center" style={{height:"100vh"}}>
                         <div className="text-center"><h1>Kindly add the reception</h1></div>
-                        <div>
+                        <div>&nbsp;&nbsp;&nbsp;
                         <Link className = "text-center" to="/reception"><button className="btn btn-primary">Add Reception</button></Link>
                         </div>
                     </div>

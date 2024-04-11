@@ -7,8 +7,12 @@ export default {
     RECEPTIONAPI:`${api}/api/reception/save`,                                            // POST
     RECEPTIONLISTAPI:`${api}/api/reception/lists`,                                       // GET
     NEWPATIENTAPI:`${api}/api/patient/addpatient`,                                       // POST
-    RECEPTIONDETAILUPDATEAPI:`${api}/api/reception/updateReception/:id`,                 // PUT
-    RECEPTIONDELETEAPI:`${api}/api/reception/delete/3`,                                  // PUT
+    RECEPTIONDETAILUPDATEAPI:`${api}/api/reception/updateReception/`,                 // PUT
+    RECEPTIONDELETEAPI:`${api}/api/reception/delete`,                                  // PUT
     PATIENTLISTFORDOCTORAPI:`${api}/api/patient/list`,                                   // GET
-    PATIENTDETAILUPDATE:`${api}/api/patient/update/6`
+    PATIENTLISTFORRECEPTIONAPI:`${api}/api/patient/lists`,                               // GET
+    PATIENTDETAILUPDATE:`${api}/api/patient/update`,                                   // PUT 
+    PATIENTAPPOINTMENTUNDO:`${api}/api/patient/undo`,                                  // PUT
+    DELETEPATIENT:`${api}/api/patient/delete`,
+    PATIENTAPPOINTMENTDONE:`${api}/api/patient/done`
 }

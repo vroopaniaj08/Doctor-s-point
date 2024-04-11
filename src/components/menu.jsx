@@ -49,12 +49,13 @@ function Menu() {
               <li><Link className="nav-link scrollto" to="/reception">Reception</Link></li>
               <li><Link className="nav-link scrollto" to="/receptionlist">Reception list</Link></li>
               <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
-              <li><Link className="nav-link scrollto" to="/patientList">Patient List</Link></li>
+              <li><Link className="nav-link scrollto" to="/patientListfordoctor">Patient List</Link></li>
               <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
               </ul>
               :
               <ul>
               {/* <li><Link className="nav-link scrollto" to="/contact">Contact</Link></li> */}
+              <li><Link className="nav-link scrollto" to="/patientListforreception">Patient List</Link></li>
               <li><Link className="nav-link scrollto" to="/newpatient">Add patient</Link></li>
               <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
               </ul>

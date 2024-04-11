@@ -12,11 +12,12 @@ export default function PatientList(){
 
     let patientList = async() =>{
         let response = await webMethods.getapi(apis.PATIENTLISTFORDOCTORAPI,logintoken.token);
-        console.log(response);
+        // console.log(response);
         setpatient(response.data.data);
     }
     return <>
-            <table className="table table-striped table-bordered table-hover table-responsive-md container" style={{marginTop:"150px"}}>
+            <h3 className='text-center' style={{marginTop:"150px"}}>Patient List</h3>
+            <table className="table table-striped table-bordered table-hover table-responsive-md container">
                 <thead>
                     <tr><th>ID</th>
                     <th>NAME</th>
