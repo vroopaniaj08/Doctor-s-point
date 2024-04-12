@@ -8,7 +8,7 @@ export default {
     RECEPTIONLISTAPI:`${api}/api/reception/lists`,                                       // GET
     NEWPATIENTAPI:`${api}/api/patient/addpatient`,                                       // POST
     RECEPTIONDETAILUPDATEAPI:`${api}/api/reception/updateReception/`,                    // PUT
-    RECEPTIONDELETEAPI:`${api}/api/reception/delete`,                                    // PUT
+    RECEPTIONDELETEAPI:`${api}/api/reception/delete`,                                    // DELETE
     PATIENTLISTFORDOCTORAPI:`${api}/api/patient/list`,                                   // GET
     PATIENTLISTFORRECEPTIONAPI:`${api}/api/patient/lists`,                               // GET
     PATIENTDETAILUPDATE:`${api}/api/patient/update`,                                     // PUT 

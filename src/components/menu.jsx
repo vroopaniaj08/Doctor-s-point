@@ -51,6 +51,7 @@ function Menu() {
               <li><Link className="nav-link scrollto" to="/doctors">Doctors</Link></li>
               <li><Link className="nav-link scrollto" to="/patientListfordoctor">Patient List</Link></li>
               <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
+              <li><Link className="nav-link" to="/patientappointmentdone"><button className="btn btn-outline-primary">Appointment</button></Link></li>
               </ul>
               :
               <ul>
@@ -58,6 +59,7 @@ function Menu() {
               <li><Link className="nav-link scrollto" to="/patientListforreception">Patient List</Link></li>
               <li><Link className="nav-link scrollto" to="/newpatient">Add patient</Link></li>
               <li><Link className="nav-link scrollto" onClick={logout}>Logout</Link></li>
+              <li><Link className="nav-link" to="/patientappointmentdone"><button className="btn btn-outline-primary">Appointment</button></Link></li>
               </ul>
             
             :
@@ -72,7 +74,7 @@ function Menu() {
             <i className="bi bi-list mobile-nav-toggle"></i>
           </nav>
 
-          <a href="#appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span> Appointment</a>
+          {/* <a href="#appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span> Appointment</a> */}
 
         </div>
       </header>

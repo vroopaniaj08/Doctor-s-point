@@ -21,8 +21,13 @@ class WebMethods{
             },
           })}
 
-    putapi(url,data){
-      return axios.put(url,data)
+    putapi(url,token){
+      return axios.put(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      })
     }
     putapiwitht(url,data,token){
       return axios.put(url, data, {

@@ -11,6 +11,7 @@ import Receptionlist from './components/Receptionlist'
 import NewPatient from './components/newPatient'
 import PatientListForDoctor from './components/patientListDoctor'
 import PatientListForReception from './components/patientListReception'
+import PatientList from './components/Appointment'
 // import PatientDetailUpdate from './components/patientDetailUpdate'
 // import Logout from './components/logout'
 // import { useNavigate } from 'react-router-dom'
@@ -34,6 +35,7 @@ function App() {
     <Route exact path='/newpatient' element={<NewPatient></NewPatient>}></Route>
     <Route exact path='/patientListfordoctor' element={<PatientListForDoctor></PatientListForDoctor>}></Route>
     <Route exact path='/patientListforreception' element={<PatientListForReception></PatientListForReception>}></Route>
+    <Route exact path='/patientappointmentdone' element={<PatientList></PatientList>}></Route>
    </Routes>
     </>
   )
