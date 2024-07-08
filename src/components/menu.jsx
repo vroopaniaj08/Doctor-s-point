@@ -11,7 +11,7 @@ function Menu() {
   let navigate = useNavigate()
   let doctorLoginStatus = useSelector(state=>state.userDetail.value)
 
-  let result = JSON.parse(localStorage.getItem('LoginStatus'))
+  // let result = JSON.parse(localStorage.getItem('LoginStatus'))
   
   let logout=(event)=>{
     event.preventDefault();
@@ -27,10 +27,8 @@ function Menu() {
             <i className="bi bi-phone"></i> +91 94072XXXXX
           </div>
           <div className="d-none d-lg-flex social-links align-items-center">
-            <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
-            <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
-            <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-            <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/apoorvjain_8/" className="instagram" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/apoorv-jain-290a9a269" className="linkedin" target="_blank" rel="noopener noreferrer"><i className="bi bi-linkedin"></i></a>
           </div>
         </div>
       </div>
@@ -39,7 +37,7 @@ function Menu() {
       <header id="header" className="fixed-top">
         <div className="container d-flex align-items-center">
 
-          <h1 className="logo me-auto"><a href="index.html">Doctor's point</a></h1>
+          <h1 className="logo me-auto">Doctor's point</h1>
 
           <nav id="navbar" className="navbar order-last order-lg-0">
             {doctorLoginStatus.isL?
@@ -65,9 +63,6 @@ function Menu() {
             :
             <ul>
               <li><Link className="nav-link scrollto" to="/">Home</Link></li>
-              <li><Link className="nav-link scrollto" to="/about">About</Link></li>
-              <li><Link className="nav-link scrollto" to="/services">Services</Link></li>
-              <li><Link className="nav-link scrollto" to="/departments">Departments</Link></li>
               <li><Link className="nav-link scrollto" to="/login">Login</Link></li>
             </ul>
             }

@@ -14,5 +14,5 @@ export default {
     PATIENTDETAILUPDATE:`${api}/api/patient/update`,                                     // PUT 
     PATIENTAPPOINTMENTUNDO:`${api}/api/patient/undo`,                                    // PUT
     DELETEPATIENT:`${api}/api/patient/delete`,                                           // PUT
-    PATIENTAPPOINTMENTDONE:`${api}/api/patient/done`
+    PATIENTAPPOINTMENTDONE:`${api}/api/patient/done`                                     // 
 }

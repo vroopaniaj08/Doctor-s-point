@@ -26,6 +26,7 @@ export default function PatientList() {
         console.log("hi")
 
     }
+
     let doneupdate = async (event) => {
         event.preventDefault()
         let ob = {
@@ -42,11 +43,13 @@ export default function PatientList() {
         // console.log(response);
         setpatient(response.data.data);
     }
+
     let patientListDelete = async (id) => {
         console.log(apis.DELETEPATIENT + "/" + id)
         let response = await webMethods.deleteapi(apis.DELETEPATIENT + "/" + id, logintoken.token)
         console.log(response)
     }
+    
     return <>
         <h3 className='text-center' style={{ marginTop: "150px" }}>Patient List</h3>
         <table className="table table-striped table-bordered table-hover table-responsive-md container">
